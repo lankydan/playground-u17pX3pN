@@ -203,4 +203,4 @@ In conclusion Cassandra is a NoSQL database that allows you to mange large amoun
 
 The code used in this post can be found on my [GitHub](https://github.com/lankydan/spring-data-cassandra).
 
-If you liked this post, the original version and other posts can be found on my blog, [www.lankydanblog.com](www.lankydanblog.com).
+If you liked this post, the original version and other posts can be found on my blog, [www.lankydanblog.com](https://lankydanblog.com/).
