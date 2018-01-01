@@ -1,6 +1,6 @@
 title: Spring 5 Project
 plan:
-- title: Welcome
+- title: Getting started with Spring Data Cassandra
   statement: markdowns/welcome.md
 projects:
   java:
