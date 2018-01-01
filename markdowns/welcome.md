@@ -190,7 +190,7 @@ Caused by: com.datastax.driver.core.exceptions.InvalidQueryException: Cannot exe
 ```
 The exception is telling us that all we need to do to fix this is to use "ALLOW FILTERING" so why don't we just go and add that in and carry on? Well we could do that but it does also mention that it will lead to unpredictable performance and there lies the reason why I recommend that you stay away from it unless there is no other choice.
 
-"ALLOW FILTERING" is needed if you want to query a field that is not part of the primary key, which is why querying by `last_name` causes it to fail. The reason why it is recommended not to use "ALLOW FILTERING" is because it requires the whole table or partition to be read and then goes on to filter out the invalid records. Cassandra's read speed comes from querying the partition and clustering columns as it knows where they lie in memory and can just grab them right away without having to look at the rest of the table (CORRECT!!!!!????).
+"ALLOW FILTERING" is needed if you want to query a field that is not part of the primary key, which is why querying by `last_name` causes it to fail. The reason why it is recommended not to use "ALLOW FILTERING" is because it requires the whole table or partition to be read and then goes on to filter out the invalid records. Cassandra's read speed comes from querying the partition and clustering columns as it knows where they lie in memory and can just grab them right away without having to look at the whole table.
 
 If you decide you really want to use filtering then simply use the code used in the example (added below as well).
 ```java
@@ -200,3 +200,7 @@ List<Person> findByLastName(final String lastName);
 With all this code you have enough to allow you to persist some records and read them back.
 
 In conclusion Cassandra is a NoSQL database that allows you to mange large amounts of data across serves while maintaining high availability and fast reads but at the cost of decreased consistency. Spring Data Cassandra is one way of bridging the gap between your Java code and Cassandra allowing you to form records from POJOs and write queries by simply typing a valid method name. This post only brushed on some of the simple configuration to get up and running with Spring Data Cassandra but hopefully it is enough to get you started nice and quickly.
+
+The code used in this post can be found on my [GitHub](https://github.com/lankydan/spring-data-cassandra).
+
+If you liked this post, the original version and other posts can be found on my blog, [www.lankydanblog.com](www.lankydanblog.com).

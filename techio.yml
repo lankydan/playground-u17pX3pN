@@ -1,4 +1,4 @@
-title: Spring 5 Project
+title: Getting started with Spring Data Cassandra
 plan:
 - title: Getting started with Spring Data Cassandra
   statement: markdowns/welcome.md
