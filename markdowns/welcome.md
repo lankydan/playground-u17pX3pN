@@ -13,7 +13,7 @@ Since I am using Spring Boot in this post `spring-boot-starter-data-cassandra` c
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-data-cassandra</artifactId>
-  <version>2.0.0.M3</version>
+  <version>2.0.0.M7</version>
 </dependency>
 
 <repositories>
